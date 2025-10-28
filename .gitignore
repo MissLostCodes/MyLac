@@ -1,0 +1,91 @@
+# -------------------------------
+# Python
+# -------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# -------------------------------
+# Virtual Environments & uv
+# -------------------------------
+.venv/
+venv/
+env/
+.uv/
+.uv.lock
+uv.lock
+
+# -------------------------------
+# IDEs and Editors
+# -------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# -------------------------------
+# OS Files
+# -------------------------------
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# -------------------------------
+# Project Specific
+# -------------------------------
+# Folder containing raw PDFs
+KnowledgeBase/
+
+# Folder containing generated chunks and processed data
+modules/outputs/
+
+# Logs and cache files
+logs/
+*.log
+.cache/
+*.tmp
+temp/
+tmp/
+
+# Model or vector database files (if any)
+*.bin
+*.npy
+*.npz
+*.pt
+*.pkl
+*.db
+*.sqlite
+*.faiss
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# -------------------------------
+# Environment and Secrets
+# -------------------------------
+.env
+.env.*
+*.token
+token.json
+credentials.json
+secrets.json
+
+# -------------------------------
+# Miscellaneous
+# -------------------------------
+*.bak
+*.old
+*.orig
+*.lock
