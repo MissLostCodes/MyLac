@@ -483,7 +483,7 @@ async def start_conversation(top_k: int = 3):
             ]
  #////////////////   thwse fucking points to actual eng
             # Combine search results for the system message
-            msg = f"Use the following textbook content to answer the query: \n\n{results.retrieve}\n\n"
+            msg = f"Use the following textbook content to answer the query: \n\n{results}\n\n"
             system_msg = SystemMessage(content=prompts.SYSTEM_PROMPT + msg)
             human_msg = HumanMessage(content=query)
 
