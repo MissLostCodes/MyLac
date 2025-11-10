@@ -76,7 +76,6 @@ tmp/
 # Environment and Secrets
 # -------------------------------
 .env
-.env.*
 *.token
 token.json
 credentials.json

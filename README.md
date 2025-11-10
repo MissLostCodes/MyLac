@@ -38,7 +38,7 @@ uv add -r requirements.txt
 Create an env file : 
 ```bash
 
-OLLAMA_MODEL=llama3.2:3b  # any model pulled in Ollama
+OLLAMA_MODEL=qwen3:0.6b # any model pulled in Ollama
 GOOGLE_MODEL=gemini-2.0-flash
 GOOGLE_API_KEY=<your key>
 QDRANT_URL=https://<cluster>.gcp-cloud.qdrant.io
