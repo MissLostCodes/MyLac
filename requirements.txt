@@ -23,3 +23,5 @@ langchain_mcp_adapters
 langgraph
 colorlog
 langchain_google_genai
+streamlit
+nest-asyncio

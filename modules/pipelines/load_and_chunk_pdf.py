@@ -24,11 +24,6 @@ import pytesseract
 from tqdm import tqdm
 from dotenv import load_dotenv
 
-# Optional embedding / vector store imports (uncomment if used)
-# from langchain_ollama.OllamaEmbeddings import OllamaEmbeddings
-# from qdrant_client import QdrantClient
-# from qdrant_client.models import PointStruct
-
 load_dotenv()
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger("pdf_chunker")
@@ -317,21 +312,6 @@ def process_book(pdf_filename: str, textbook_title: str, output_root: str = OUTP
 
     logger.info("Saved %d chunks to %s and manifest to %s", len(chunks), chunks_path, manifest_path)
     logger.info("Assets saved under %s", assets_dir)
-
-    # OPTIONAL: Embeddings + upsert to Qdrant (uncomment and configure)
-    # ollama = OllamaEmbeddings(model="qwen3-embedding:4b")
-    # texts = [c["text"] for c in chunks]
-    # embeddings = ollama.embed_documents(texts)
-    # q = QdrantClient(url="http://localhost:6333", prefer_grpc=False)
-    # # create collection if needed
-    # if not q.get_collections().collections:
-    #     q.recreate_collection(collection_name="books", vectors_config={"size": len(embeddings[0]), "distance": "Cosine"})
-    # points = []
-    # for idx, emb in enumerate(embeddings):
-    #     meta = chunks[idx]["metadata"]
-    #     points.append(PointStruct(id=int(idx), vector=emb, payload=meta))
-    # q.upsert(collection_name="books", points=points)
-    # logger.info("Upserted embeddings to Qdrant collection 'books'")
 
 def process_page_worker(pdf_path: str, page_num: int, assets_dir: str, book_slug: str) -> List[Dict[str, Any]]:
     """
